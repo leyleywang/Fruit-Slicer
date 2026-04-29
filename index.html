@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>水果忍者 - Fruit Slicer</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- UI 层 -->
+        <div id="ui-layer">
+            <div id="score-display">分数: <span id="score">0</span></div>
+            <div id="combo-display">连击: <span id="combo">0</span></div>
+            <div id="lives-display">
+                生命: 
+                <span id="lives">
+                    <span class="heart">❤</span>
+                    <span class="heart">❤</span>
+                    <span class="heart">❤</span>
+                </span>
+            </div>
+            <div id="level-display">关卡: <span id="level">1</span></div>
+            <div id="freeze-timer" style="display: none;">❄️ 时间冻结: <span id="freeze-time">0</span>s</div>
+            <div id="double-timer" style="display: none;">✨ 双倍分数: <span id="double-time">0</span>s</div>
+        </div>
+
+        <!-- 游戏画布 -->
+        <canvas id="game-canvas"></canvas>
+
+        <!-- 开始界面 -->
+        <div id="start-screen" class="overlay">
+            <div class="overlay-content">
+                <h1>🍉 水果忍者 🍉</h1>
+                <p>用鼠标或手指滑动切割水果</p>
+                <p>⚠️ 避开炸弹！</p>
+                <button id="start-btn">开始游戏</button>
+            </div>
+        </div>
+
+        <!-- 游戏结束界面 -->
+        <div id="game-over-screen" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1>💥 游戏结束 💥</h1>
+                <p>最终分数: <span id="final-score">0</span></p>
+                <p>达到关卡: <span id="final-level">1</span></p>
+                <button id="restart-btn">重新开始</button>
+            </div>
+        </div>
+
+        <!-- 关卡升级界面 -->
+        <div id="level-up-screen" class="overlay" style="display: none;">
+            <div class="overlay-content">
+                <h1>🎉 关卡升级！🎉</h1>
+                <p>进入关卡 <span id="next-level">2</span></p>
+                <button id="continue-btn">继续</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 模块 -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
