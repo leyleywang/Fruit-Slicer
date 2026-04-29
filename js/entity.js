@@ -60,24 +60,24 @@ export class Fruit extends Entity {
         let x, y, vx, vy;
         
         const margin = 50;
-        const velocityMultiplier = Utils.random(0.8, 1.2);
+        const velocityMultiplier = Utils.random(0.9, 1.3);
         const velocity = baseVelocity * velocityMultiplier;
         
-        if (spawnSide < 0.6) {
+        if (spawnSide < 0.7) {
             x = Utils.random(margin, canvasWidth - margin);
             y = canvasHeight + margin;
-            vx = Utils.random(-2, 2);
-            vy = -velocity * Utils.random(1.2, 1.6);
-        } else if (spawnSide < 0.8) {
+            vx = Utils.random(-3, 3);
+            vy = -velocity * Utils.random(1.4, 2.0);
+        } else if (spawnSide < 0.85) {
             x = -margin;
-            y = Utils.random(canvasHeight * 0.3, canvasHeight * 0.7);
-            vx = velocity * Utils.random(0.8, 1.2);
-            vy = -velocity * Utils.random(0.5, 0.9);
+            y = Utils.random(canvasHeight * 0.5, canvasHeight * 0.8);
+            vx = velocity * Utils.random(0.9, 1.3);
+            vy = -velocity * Utils.random(0.7, 1.1);
         } else {
             x = canvasWidth + margin;
-            y = Utils.random(canvasHeight * 0.3, canvasHeight * 0.7);
-            vx = -velocity * Utils.random(0.8, 1.2);
-            vy = -velocity * Utils.random(0.5, 0.9);
+            y = Utils.random(canvasHeight * 0.5, canvasHeight * 0.8);
+            vx = -velocity * Utils.random(0.9, 1.3);
+            vy = -velocity * Utils.random(0.7, 1.1);
         }
         
         const fruit = new Fruit(x, y, fruitType, isSpecial ? 45 : 35);
@@ -136,26 +136,26 @@ export class Bomb extends Entity {
         const bomb = new Bomb(0, 0, 40);
         
         const margin = 50;
-        const velocityMultiplier = Utils.random(0.7, 1.0);
+        const velocityMultiplier = Utils.random(0.8, 1.1);
         const velocity = baseVelocity * velocityMultiplier;
         
         const spawnSide = Math.random();
         
-        if (spawnSide < 0.6) {
+        if (spawnSide < 0.7) {
             bomb.x = Utils.random(margin, canvasWidth - margin);
             bomb.y = canvasHeight + margin;
-            bomb.velocityX = Utils.random(-1.5, 1.5);
-            bomb.velocityY = -velocity * Utils.random(1.0, 1.4);
-        } else if (spawnSide < 0.8) {
+            bomb.velocityX = Utils.random(-2, 2);
+            bomb.velocityY = -velocity * Utils.random(1.2, 1.7);
+        } else if (spawnSide < 0.85) {
             bomb.x = -margin;
-            bomb.y = Utils.random(canvasHeight * 0.3, canvasHeight * 0.7);
-            bomb.velocityX = velocity * Utils.random(0.7, 1.0);
-            bomb.velocityY = -velocity * Utils.random(0.4, 0.7);
+            bomb.y = Utils.random(canvasHeight * 0.5, canvasHeight * 0.8);
+            bomb.velocityX = velocity * Utils.random(0.8, 1.1);
+            bomb.velocityY = -velocity * Utils.random(0.6, 0.9);
         } else {
             bomb.x = canvasWidth + margin;
-            bomb.y = Utils.random(canvasHeight * 0.3, canvasHeight * 0.7);
-            bomb.velocityX = -velocity * Utils.random(0.7, 1.0);
-            bomb.velocityY = -velocity * Utils.random(0.4, 0.7);
+            bomb.y = Utils.random(canvasHeight * 0.5, canvasHeight * 0.8);
+            bomb.velocityX = -velocity * Utils.random(0.8, 1.1);
+            bomb.velocityY = -velocity * Utils.random(0.6, 0.9);
         }
         
         return bomb;
